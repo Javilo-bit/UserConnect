@@ -1,144 +1,277 @@
-/* ==============================
-   Estilos generales
-   ============================== */
-
+/* ===============================
+   RESET Y BASE
+================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #f4f6f9;
+    color: #1f2937;
+}
+
+/* ===============================
+   LAYOUT GENERAL
+================================ */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
-    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
 }
 
+.main-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor reutilizable */
 .container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
-/* ==============================
-   Header y navegación
-   ============================== */
-
+/* ===============================
+   HEADER
+================================ */
 .header {
-    background-color: #1f2933;
-    padding: 20px 0;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
 }
 
 .logo {
-    color: #ffffff;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #2563eb;
+    text-decoration: none;
 }
 
-.nav ul {
-    list-style: none;
+.nav {
     display: flex;
-    gap: 20px;
+    gap: 24px;
 }
 
 .nav a {
-    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
+    color: #374151;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
 }
 
-.nav a:hover,
+.nav a:hover {
+    background: #e0e7ff;
+    color: #1d4ed8;
+}
+
 .nav a.active {
-    text-decoration: underline;
+    color: #2563eb;
+    font-weight: 600;
 }
 
-/* ==============================
-   Contenido principal
-   ============================== */
-
+/* ===============================
+   MAIN CONTENT
+================================ */
 .main-content {
-    padding: 60px 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 0;
 }
 
+/* ===============================
+   HERO (INDEX)
+================================ */
 .hero {
     text-align: center;
-    margin-bottom: 60px;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, #ffffff, #f3f4f6);
+    border-radius: 16px;
 }
 
 .hero h2 {
     font-size: 2.2rem;
-    margin-bottom: 20px;
+    font-weight: 800;
+    margin-bottom: 16px;
 }
 
 .hero p {
     max-width: 700px;
-    margin: auto;
-    margin-bottom: 30px;
+    margin: 0 auto 28px;
+    font-size: 1.05rem;
+    color: #4b5563;
 }
 
 .btn-primary {
-    background-color: #2563eb;
+    display: inline-block;
+    padding: 14px 28px;
+    background: #2563eb;
     color: #ffffff;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
     font-weight: 600;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.2s ease;
 }
 
 .btn-primary:hover {
-    background-color: #1d4ed8;
+    background: #1e40af;
 }
 
-/* ==============================
-   Sección de características
-   ============================== */
+/* ===============================
+   FEATURES (INDEX)
+================================ */
+.features {
+    margin-top: 48px;
+}
 
 .features h3 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
+    font-size: 1.5rem;
 }
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
 }
 
 .feature {
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
 }
 
 .feature h4 {
-    margin-bottom: 10px;
-    color: #2563eb;
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
-/* ==============================
-   Footer
-   ============================== */
+/* ===============================
+   FORMULARIOS (LOGIN / REGISTER)
+================================ */
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
-.footer {
-    background-color: #1f2933;
-    color: #ffffff;
+.card {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 18px;
+    border: 1px solid #e5e7eb;
+}
+
+.card h2 {
     text-align: center;
-    padding: 20px 0;
-    margin-top: 60px;
+    margin-bottom: 8px;
 }
 
-/* ==============================
-   Diseño responsivo básico
-   ============================== */
+.subtitle {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #6b7280;
+    font-size: 0.95rem;
+}
 
-@media (max-width: 768px) {
-    .nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
+.form-group {
+    margin-bottom: 18px;
+}
 
-    .hero h2 {
-        font-size: 1.8rem;
-    }
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 0.95rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #2563eb;
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1e40af;
+}
+
+.form-links {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.form-links a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.form-links a:hover {
+    text-decoration: underline;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+    background: #111827;
+    color: #e5e7eb;
+    padding: 24px 0;
+}
+
+.footer .container {
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+.footer-copyright {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: #9ca3af;
 }
